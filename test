@@ -1,0 +1,26 @@
+db.tokenConfigs.insertOne({
+    "coinTicker": "SUIMON",
+    "coinName": "Suimon",
+    "coinId": "0xfe05b5943a458d2e38806272a2d12039e4114cbab2490c036ab4c13e68c30475::suimon::SUIMON",
+    "coinIdx": "fe05b5943a458d2e38806272a2d12039e4114cbab2490c036ab4c13e68c30475::suimon::SUIMON",
+    "poolId1": "0x7513045b59e8c53b87b200c037b4dc43d551a33c665a45cb6ab23b01337eb189",
+    "buyLink": "https://dex.bluemove.net/swap/0xfe05b5943a458d2e38806272a2d12039e4114cbab2490c036ab4c13e68c30475::suimon::SUIMON/0x2::sui::sui",
+    "poolName1": "Bluemove",
+    "coinDecimals": 9, // Example value for coin decimals
+    "threshold": 5, // Example value for threshold
+    "coinTotalSupply": 10000000000, // Example value for total coin supply
+    "buyEmoji": "💧",
+    "firstEmoji": "💧",
+    "chatId": -1002126089684, // Example value for chat ID
+    "twitterLink": "https://hello.com",
+    "websiteLink": "https://hello.com",
+    "tgLink": "https://t.me/suimon_sui",
+    "trendingMod": false,
+    "gifUrl": "https://tablesui.xyz/wp-content/uploads/2024/02/suimon.gif"
+})
+
+
+db.tokenConfigs.updateOne(
+    { "_id": ObjectId("65d25d6600a3eedcf0990296") }, // Specify the document by its _id
+    { $set: { "vidUrl": "https://jesusbase.xyz/wp-content/uploads/2024/02/suimon.mp4" } } // Set the new value for the vidUrl field
+)

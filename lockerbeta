@@ -1,0 +1,31 @@
+// TokenLocker Module
+module token_locker::TokenLocker {
+    use std::option;
+    use sui::coin;
+    use std::ascii;
+    use sui::transfer;
+    use sui::tx_context::{Self, TxContext};
+    use std::string::{Self, String};
+    use sui::object::{Self, UID};
+    use sui::dynamic_object_field as ofield;
+
+    struct Locker has key {
+        id: UID,
+        amount: u64,
+        unlock_timestamp: u64,
+        sender: UID,
+        is_locked: bool
+    }
+
+    public fun create_locker(
+        amount: <u64>, unlock_timestamp: <u64>, ctx: &mut TxContext
+    ): Locker {
+        Locker {
+            id: object::new(ctx),
+            unlock_timestamp: string::utf8(unlock_timestamp),
+            amount: 20,
+            is_locked: true,
+            sender: tx_context::sender(ctx)
+        }
+    }
+}

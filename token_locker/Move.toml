@@ -1,0 +1,14 @@
+[package]
+name = "token_locker"
+version = "0.0.1"
+
+[dependencies]
+Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+
+[addresses]
+token_locker = "0x0"
+sui = "0x2"
+
+
+sui client call --package 0x987da1d7d021b0337179cdf5fdca676f4dd5ae1bcb98a26567fa514a76ec204b --module 'locker' --function 'get_current_timestamp' --args '0x6' --gas-budget 100000000
+sui client call --package 0x987da1d7d021b0337179cdf5fdca676f4dd5ae1bcb98a26567fa514a76ec204b  --module 'locker' --function 'create_Safe' --args '0xc316b10f10cabf75a655dd23d1d44df5fb13d103b31b7ec633023faa141520ad' '1706050868877' --gas-budget 100000000000                                        

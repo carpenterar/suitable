@@ -7,4 +7,4 @@ published-at = "0x0cfc7e5bde2b158ca6becbea52d365a8155d27851861716b4cbf717a85779c
 Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
 
 [addresses]
-wood = "0x0"
+wood = "0x0cfc7e5bde2b158ca6becbea52d365a8155d27851861716b4cbf717a85779c91"

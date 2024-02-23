@@ -1,9 +1,17 @@
 [package]
-name = "wood"
+name = "tablelocker"
 version = "0.0.1"
 
 [dependencies]
 Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-framework/packages/sui-framework", rev = "framework/testnet" }
+wood = { git = "https://github.com/carpenterar/suitable.git" , subdir = "fungible_tokens", rev = "wood-dev" }
 
 [addresses]
-wood = "0x0"
+tablelocker = "0x0"
+burn = "0x0000000000000000000000000000000000000000000000000000000000000000"
+
+
+
+
+
+

@@ -8,4 +8,3 @@ Sui = { git = "https://github.com/MystenLabs/sui.git", subdir = "crates/sui-fram
 car =  "0x0"
 sui =  "0x2"
 burn = "0x0000000000000000000000000000000000000000000000000000000000000000"
-wood = "0xa3154bd7e8f1aaa1356e2926853a4064c543d90088a99780d02121fac8fb7610"

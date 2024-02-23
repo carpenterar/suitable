@@ -31,8 +31,3 @@ module wood::wood {
         coin::burn(treasury, coin);
     }
 }
-
-
-0x1354b8e33eaef238fd795640f9881f5b19db5c253019787f84bd92ad099dafd7
-
-sui client call --package 0xa3154bd7e8f1aaa1356e2926853a4064c543d90088a99780d02121fac8fb7610 --module wood --function mint --args 0x834aa3e6f544aad256b694e5cf71bac3c7c054f1970c009658d1649901d7eb5a 6942000000000 0xbf963163b163610bd9b73ad6af33ffc3ae42dd38d63fa4ec1f60417059e3d0a7 --gas-budget 50000000

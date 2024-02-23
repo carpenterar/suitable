@@ -2,11 +2,12 @@
 
 [move]
 version = 0
-manifest_digest = "F1CCABD8036ADD90A372683005819F963B3460072BCAC0A22C472CB1733860C0"
-deps_digest = "F8BBB0CCB2491CA29A3DF03D6F92277A4F3574266507ACD77214D37ECA3F3082"
+manifest_digest = "139871A248E4A80642F7A065870D071288F44B7935948717C1FA615086B68973"
+deps_digest = "3C4103934B1E040BB6B23F1D610B4EF9F2F1166A50A104EADCF77467C004C600"
 
 dependencies = [
   { name = "Sui" },
+  { name = "wood" },
 ]
 
 [[move.package]]
@@ -21,7 +22,15 @@ dependencies = [
   { name = "MoveStdlib" },
 ]
 
+[[move.package]]
+name = "wood"
+source = { git = "https://github.com/carpenterar/suitable.git", rev = "wood-dev", subdir = "fungible_tokens" }
+
+dependencies = [
+  { name = "Sui" },
+]
+
 [move.toolchain-version]
-compiler-version = "1.18.1"
+compiler-version = "1.19.0"
 edition = "legacy"
 flavor = "sui"

@@ -1,5 +1,5 @@
 
-module car::car_shop {
+module tablelocker::car_shop {
     
     use sui::transfer;
     use sui::sui::SUI;
@@ -9,13 +9,15 @@ module car::car_shop {
     use sui::object::{Self, UID};
     use sui::balance::{Self, Balance};
     use sui::tx_context::{Self, TxContext};
+    use wood::wood::WOOD;
+    //use woodcoin::wood::WOOD;
 
     const EInsufficientBalance: u64 = 0;
     const BURN_ADDRESS: address = @burn;
 
     struct Locker has key, store {
         id: UID,
-        balance: Balance<SUI>
+        balance: Balance<WOOD>
     }
 
     
@@ -54,7 +56,7 @@ module car::car_shop {
 
     // New function to create a Locker object and send it to the sender
     //WOOD WOOOD SNED ME WOOD SIR
-    public entry fun create_locker(locked_coin: &mut Coin<SUI>, amount: u64, ctx: &mut TxContext) {
+    public entry fun create_locker(locked_coin: &mut Coin<WOOD>, amount: u64, ctx: &mut TxContext) {
 
         let locker = Locker {
             id: object::new(ctx),
@@ -72,8 +74,8 @@ module car::car_shop {
     // Function to unlock a Locker and regain the locked SUI
     public entry fun unlock_locker(locker: Locker, ctx: &mut TxContext) {
         let amount = balance::value(&locker.balance);
-        let sui = coin::take(&mut locker.balance, amount, ctx);
-        transfer::public_transfer(sui, tx_context::sender(ctx));
+        let wood = coin::take(&mut locker.balance, amount, ctx);
+        transfer::public_transfer(wood, tx_context::sender(ctx));
         // Transfer the Locker to the burn address
         transfer::public_transfer(locker, BURN_ADDRESS);
     }
